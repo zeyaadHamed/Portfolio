@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* Global Rules */
+.active {
+    @apply text-effect;
+}
+
+#typing-text {
+    @apply inline-block whitespace-nowrap border-r-2 font-bold w-fit;
+}
+
+.style-heade {
+    @apply border-b border-white;
+}
+
+.center_section {
+    @apply flex flex-col justify-center items-center;
+}
+
+/* End It */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    @apply font-sans;
+}
+
+header {
+    @apply shadow-md;
+}
+
+header span {
+    @apply text-effect;
+}
+
+header .links {
+    @apply flex;
+}
+
+header .links li {
+    @apply mx-3 text-xl cursor-pointer duration-500 relative;
+}
+
+header .links li:hover {
+    @apply text-effect;
+}
+
+header .links li:hover::before {
+    content: '';
+    @apply absolute w-full bottom-0 h-px bg-white;
+    animation: effectLine 0.5s ease-in;
+}
+
+.socials a {
+    @apply mx-2 w-10 h-10 rounded-full;
+}
+
+.socials a i {
+    @apply text-2xl;
+}
+
+.about-text {
+    @apply leading-8 text-lg;
+}
+
+.skills-container {
+    @apply grid grid-cols-1 gap-5;
+}
+
+.skill-category {
+    @apply p-5 rounded-lg bg-gray-800 shadow-md;
+}
+
+.skill-category h2 {
+    @apply mb-5;
+}
+
+.skills-list {
+    @apply list-none p-0;
+}
+
+.skills-list li {
+    @apply mb-4 relative;
+}
+
+.skills-list li span {
+    @apply text-xl block mb-1 cursor-pointer;
+}
+
+.progress-bar {
+    @apply bg-gray-700 h-2 rounded-lg overflow-hidden w-full relative;
+}
+
+.progress {
+    @apply bg-green-500 h-full rounded-lg transition-width duration-500 ease-in-out;
+}
+
+.percentage {
+    @apply absolute top-0 left-[calc(100%-60px)] bg-blue-500 text-white py-1 px-2 rounded-lg text-sm font-bold flex items-center justify-center whitespace-nowrap z-10;
+}
+
+.arrow-up {
+    @apply absolute bottom-[-10px] left-1/2 ml-[-5px] w-0 h-0 border-l-5 border-r-5 border-b-5 border-b-gray-800;
+}
+
+.projects .boxes {
+    @apply grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))];
+}
+
+.projects .box {
+    @apply rounded-lg pb-2 duration-500 bg-blue-800 shadow-lg;
+}
+
+.projects .box:hover {
+    @apply translate-y-[-10px] shadow-2xl;
+}
+
+.projects .box .img {
+    @apply relative flex justify-center duration-500;
+}
+
+.projects .box .img img {
+    @apply rounded-lg;
+}
+
+.projects .box .img .links_img {
+    @apply absolute bottom-1/2 opacity-0 text-3xl duration-500;
+}
+
+.projects .box .img:hover .links_img {
+    opacity: 1;
+}
+
+.projects .box .img::before {
+    content: '';
+    @apply absolute w-full h-full bg-black opacity-50 rounded-lg transition-opacity duration-500;
+}
+
+.projects .box .img:hover::before {
+    @apply opacity-100;
+}
+
+.projects .box .text_box {
+    @apply flex justify-center items-center flex-col;
+}
+
+.projects .box .text_box h3 {
+    @apply text-2xl my-2 text-gray-100;
+}
+
+.projects .box .text_box .icon {
+    @apply text-xl;
+}
+
+.projects .text_box .icon span {
+    @apply text-gray-200 text-sm;
+}
+
+.contact {
+    @apply p-16 bg-gray-900 text-white text-center;
+}
+
+.contact h1 {
+    @apply text-5xl mb-5 text-gray-200;
+}
+
+.contact p {
+    @apply text-2xl mb-10 text-gray-400;
+}
+
+.input-field {
+    @apply w-full p-2 mb-5 bg-gray-800 border-none rounded-lg text-white text-base;
+}
+
+.input-field::placeholder {
+    @apply text-gray-400;
+}
+
+.input-field:focus {
+    @apply outline-none border-2 border-blue-400;
+}
+
+textarea.input-field {
+    @apply w-full resize-none;
+}
+
+.btn-submit {
+    @apply bg-blue-500 text-white border-none py-3 px-6 text-lg cursor-pointer rounded-lg transition-colors duration-300;
+}
+
+.btn-submit:hover {
+    @apply bg-blue-600;
+}
+
+@media (max-width: 768px) {
+    .input-field {
+        @apply w-full;
+    }
+
+    .names {
+        @apply flex flex-col mb-2;
+    }
+}
+
+@media (max-width: 979px) {
+    header {
+        @apply relative;
+    }
+
+    header .links {
+        @apply hidden flex-col absolute right-14 translate-x-[50%] top-20 bg-[#051c2788] h-[50vh] w-fit justify-around items-center p-1 transition duration-500;
+    }
+
+    header .bars {
+        @apply cursor-pointer block text-2xl;
+    }
+
+    .home {
+        @apply p-16 px-4;
+    }
+
+    .home .info {
+        @apply w-full gap-1;
+    }
+
+    .about {
+        @apply p-16 px-4;
+    }
+
+    .skills-container {
+        @apply grid grid-cols-1 gap-5;
+    }
+
+    .projects {
+        @apply p-4;
+    }
+}
+
+@keyframes effectLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
